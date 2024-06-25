@@ -16,23 +16,23 @@
 
 参考以下步骤，使用镜像创建一个定时任务。
 
-1. 点击左侧导航栏上的 __集群列表__ ，然后点击目标集群的名称，进入 __集群详情__ 页面。
+1. 点击左侧导航栏上的 __集群列表__，然后点击目标集群的名称，进入 __集群详情__ 页面。
 
     ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
-2. 在集群详情页面，点击左侧导航栏的 __工作负载__ -> __定时任务__ ，然后点击页面右上角的 __镜像创建__ 按钮。
+2. 在集群详情页面，点击左侧导航栏的 __工作负载__ -> __定时任务__，然后点击页面右上角的 __镜像创建__ 按钮。
 
     ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/cronjob01.png)
 
 3. 依次填写[基本信息](create-cronjob.md#_3)、[容器配置](create-cronjob.md#_4)、[定时任务配置](create-cronjob.md#_5)、[高级配置](create-cronjob.md#_6)后，在页面右下角点击 __确定__ 完成创建。
 
-    系统将自动返回 __定时任务__ 列表。点击列表右侧的 __︙__ ，可以对定时任务执行执行更新、删除、重启等操作。
+    系统将自动返回 __定时任务__ 列表。点击列表右侧的 __︙__，可以对定时任务执行执行更新、删除、重启等操作。
 
     ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/cronjob06.png)
 
 ### 基本信息
 
-在 __创建定时任务__ 页面中，根据下表输入信息后，点击 __下一步__ 。
+在 __创建定时任务__ 页面中，根据下表输入信息后，点击 __下一步__。
 
 ![基本信息](../images/cronjob02.png)
 
@@ -46,7 +46,7 @@
 
 > 容器配置仅针对单个容器进行配置，如需在一个容器组中添加多个容器，可点击右侧的 __+__ 添加多个容器。
 
-=== "基本信息（必填）"
+#### "基本信息（必填）"
 
     ![基本信息](../images/cronjob03.png)
 
@@ -61,31 +61,31 @@
 
         > 设置 GPU 独享之前，需要管理员预先在集群节点上安装 GPU 卡及驱动插件，并在[集群设置](../clusterops/cluster-settings.md)中开启 GPU 特性。
 
-=== "生命周期（选填）"
+#### "生命周期（选填）"
 
     设置容器启动时、启动后、停止前需要执行的命令。详情可参考[容器生命周期配置](pod-config/lifecycle.md)。
 
     ![生命周期](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy06.png)
 
-=== "健康检查（选填）"
+#### "健康检查（选填）"
 
     用于判断容器和应用的健康状态，有助于提高应用的可用性。详情可参考[容器健康检查配置](pod-config/health-check.md)。
 
     ![健康检查](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy07.png)
 
-=== "环境变量（选填）"
+#### "环境变量（选填）"
 
     配置 Pod 内的容器参数，为 Pod 添加环境变量或传递配置等。详情可参考[容器环境变量配置](pod-config/env-variables.md)。
 
     ![环境变量](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy08.png)
 
-=== "数据存储（选填）"
+#### "数据存储（选填）"
 
     配置容器挂载数据卷和数据持久化的设置。详情可参考[容器数据存储配置](pod-config/env-variables.md)。
 
     ![数据存储](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy09.png)
 
-=== "安全设置（选填）"
+#### "安全设置（选填）"
 
     通过 Linux 内置的账号权限隔离机制来对容器进行安全隔离。您可以通过使用不同权限的账号 UID（数字身份标记）来限制容器的权限。例如，输入 __0__ 表示使用 root 账号的权限。
 
@@ -97,14 +97,14 @@
 
 - 并发策略：是否允许多个 Job 任务并行执行。
 
-    - __Allow__ ：可以在前一个任务未完成时就创建新的定时任务，而且多个任务可以并行。任务太多可能抢占集群资源。
-    - __Forbid__ ：在前一个任务完成之前，不能创建新任务，如果新任务的执行时间到了而之前的任务仍未执行完，CronJob 会忽略新任务的执行。
-    - __Replace__ ：如果新任务的执行时间到了，但前一个任务还未完成，新的任务会取代前一个任务。
+  - __Allow__：可以在前一个任务未完成时就创建新的定时任务，而且多个任务可以并行。任务太多可能抢占集群资源。
+  - __Forbid__：在前一个任务完成之前，不能创建新任务，如果新任务的执行时间到了而之前的任务仍未执行完，CronJob 会忽略新任务的执行。
+  - __Replace__：如果新任务的执行时间到了，但前一个任务还未完成，新的任务会取代前一个任务。
 
     > 上述规则仅适用于同一个 CronJob 创建的多个任务。多个 CronJob 创建的多个任务总是允许并发执行。
 
-- 定时规则：基于分钟、小时、天、周、月设置任务执行的时间周期。支持用数字和 `*` 自定义 Cron 表达式，**输入表达式后下方会提示当前表达式的含义**。有关详细的表达式语法规则，可参考 [Cron 时间表语法](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax)。
-- 任务记录：设定保留多少条任务执行成功或失败的记录。 __0__ 表示不保留。
+- 定时规则：基于分钟、小时、天、周、月设置任务执行的时间周期。支持用数字和 `*` 自定义 Cron 表达式，__输入表达式后下方会提示当前表达式的含义__。有关详细的表达式语法规则，可参考 [Cron 时间表语法](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax)。
+- 任务记录：设定保留多少条任务执行成功或失败的记录。__0__ 表示不保留。
 - 超时时间：超出该时间时，任务就会被标识为执行失败，任务下的所有 Pod 都会被删除。为空时表示不设置超时时间。默认值为 360 s。
 - 重试次数：任务可重试次数，默认值为 6。
 - 重启策略：设置任务失败时是否重启 Pod。
@@ -121,7 +121,7 @@
 
     ![创建服务](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy13.png)
 
-3. 点击 __确定__ ，点击 __下一步__ 。
+3. 点击 __确定__，点击 __下一步__。
 
 ### 高级配置
 
@@ -135,11 +135,11 @@
 
 除了通过镜像方式外，还可以通过 YAML 文件更快速地创建创建定时任务。
 
-1. 点击左侧导航栏上的 __集群列表__ ，然后点击目标集群的名称，进入 __集群详情__ 页面。
+1. 点击左侧导航栏上的 __集群列表__，然后点击目标集群的名称，进入 __集群详情__ 页面。
 
     ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
-2. 在集群详情页面，点击左侧导航栏的 __工作负载__ -> __定时任务__ ，然后点击页面右上角的 __YAML 创建__ 按钮。
+2. 在集群详情页面，点击左侧导航栏的 __工作负载__ -> __定时任务__，然后点击页面右上角的 __YAML 创建__ 按钮。
 
     ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/cronjob07.png)
 

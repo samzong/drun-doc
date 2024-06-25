@@ -1,4 +1,4 @@
-# 创建守护进程(DaemonSet)
+# 创建守护进程 (DaemonSet)
 
 本文介绍如何通过镜像和 YAML 文件两种方式创建守护进程（DaemonSet）。
 
@@ -27,23 +27,23 @@
 
 参考以下步骤，使用镜像创建一个守护进程。
 
-1. 点击左侧导航栏上的 __集群列表__ ，然后点击目标集群的名称，进入 __集群详情__ 页面。
+1. 点击左侧导航栏上的 __集群列表__，然后点击目标集群的名称，进入 __集群详情__ 页面。
 
     ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
-2. 在集群详情页面，点击左侧导航栏的 __工作负载__ -> __守护进程__ ，然后点击页面右上角的 __镜像创建__ 按钮。
+2. 在集群详情页面，点击左侧导航栏的 __工作负载__ -> __守护进程__，然后点击页面右上角的 __镜像创建__ 按钮。
 
     ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/daemon01.png)
 
 3. 依次填写[基本信息](create-daemonset.md#_3)、[容器配置](create-daemonset.md#_4)、[服务配置](create-daemonset.md#_5)、[高级配置](create-daemonset.md#_6)后，在页面右下角点击 __确定__ 完成创建。
 
-    系统将自动返回 __守护进程__ 列表。点击列表右侧的 __︙__ ，可以对守护进程执行执行更新、删除、重启等操作。
+    系统将自动返回 __守护进程__ 列表。点击列表右侧的 __︙__，可以对守护进程执行执行更新、删除、重启等操作。
 
     ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/daemon05.png)
 
 ### 基本信息
 
-在 __创建守护进程__ 页面中，根据下表输入信息后，点击 __下一步__ 。
+在 __创建守护进程__ 页面中，根据下表输入信息后，点击 __下一步__。
 
 ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/daemon02.png)
 
@@ -57,7 +57,7 @@
 
 > 容器配置仅针对单个容器进行配置，如需在一个容器组中添加多个容器，可点击右侧的 __+__ 添加多个容器。
 
-=== "基本信息（必填）"
+#### "基本信息（必填）"
 
     ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/daemon06.png)
 
@@ -72,31 +72,31 @@
 
         > 设置 GPU 独享之前，需要管理员预先在集群节点上安装 GPU 卡及驱动插件，并在[集群设置](../clusterops/cluster-settings.md)中开启 GPU 特性。
 
-=== "生命周期（选填）"
+#### "生命周期（选填）"
 
     设置容器启动时、启动后、停止前需要执行的命令。详情可参考[容器生命周期配置](pod-config/lifecycle.md)。
 
     ![生命周期](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy06.png)
 
-=== "健康检查（选填）"
+#### "健康检查（选填）"
 
     用于判断容器和应用的健康状态，有助于提高应用的可用性。详情可参考[容器健康检查配置](pod-config/health-check.md)。
 
     ![健康检查](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy07.png)
 
-=== "环境变量（选填）"
+#### "环境变量（选填）"
 
     配置 Pod 内的容器参数，为 Pod 添加环境变量或传递配置等。详情可参考[容器环境变量配置](pod-config/env-variables.md)。
 
     ![环境变量](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy08.png)
 
-=== "数据存储（选填）"
+#### "数据存储（选填）"
 
     配置容器挂载数据卷和数据持久化的设置。详情可参考[容器数据存储配置](pod-config/env-variables.md)。
 
     ![数据存储](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy09.png)
 
-=== "安全设置（选填）"
+#### "安全设置（选填）"
 
     通过 Linux 内置的账号权限隔离机制来对容器进行安全隔离。您可以通过使用不同权限的账号 UID（数字身份标记）来限制容器的权限。例如，输入 __0__ 表示使用 root 账号的权限。
 
@@ -114,13 +114,13 @@
 
     ![创建服务](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy13.png)
 
-3. 点击 __确定__ ，点击 __下一步__ 。
+3. 点击 __确定__，点击 __下一步__。
 
 ### 高级配置
 
 高级配置包括负载的网络配置、升级策略、调度策略、标签与注解四部分，可点击下方的页签查看各部分的配置要求。
 
-=== "网络配置"
+#### "网络配置"
 
     应用在某些场景下会出现冗余的 DNS 查询。Kubernetes 为应用提供了与 DNS 相关的配置选项，能够在某些场景下有效地减少冗余的 DNS 查询，提升业务并发量。
 
@@ -133,24 +133,24 @@
         - ClusterFirst：应用对接 Kube-DNS/CoreDNS。
         - None：Kubernetes v1.9（Beta in v1.10）中引入的新选项值。设置为 None 之后，必须设置 dnsConfig，此时容器的域名解析文件将完全通过 dnsConfig 的配置来生成。
 
-    - 域名服务器：填写域名服务器的地址，例如 __10.6.175.20__ 。
+    - 域名服务器：填写域名服务器的地址，例如 __10.6.175.20__。
     - 搜索域：域名查询时的 DNS 搜索域列表。指定后，提供的搜索域列表将合并到基于 dnsPolicy 生成的域名解析文件的 search 字段中，并删除重复的域名。Kubernetes 最多允许 6 个搜索域。
     - Options：DNS 的配置选项，其中每个对象可以具有 name 属性（必需）和 value 属性（可选）。该字段中的内容将合并到基于 dnsPolicy 生成的域名解析文件的 options 字段中，dnsConfig 的 options 的某些选项如果与基于 dnsPolicy 生成的域名解析文件的选项冲突，则会被 dnsConfig 所覆盖。
     - 主机别名：为主机设置的别名。
 
-=== "升级策略"
+#### "升级策略"
 
     ![升级策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy14.png)
 
-    - 升级方式： __滚动升级__ 指逐步用新版本的实例替换旧版本的实例，升级的过程中，业务流量会同时负载均衡分布到新老的实例上，因此业务不会中断。 __重建升级__ 指先删除老版本的负载实例，再安装指定的新版本，升级过程中业务会中断。
+    - 升级方式：__滚动升级__ 指逐步用新版本的实例替换旧版本的实例，升级的过程中，业务流量会同时负载均衡分布到新老的实例上，因此业务不会中断。__重建升级__ 指先删除老版本的负载实例，再安装指定的新版本，升级过程中业务会中断。
     - 最大无效 Pod 数：指定负载更新过程中不可用 Pod 的最大值或比率，默认 25%。如果等于实例数有服务中断的风险。
     - 最大浪涌：更新 Pod 的过程中 Pod 总数超过 Pod 期望副本数部分的最大值或比率。默认 25%。
     - 最大保留版本数：设置版本回滚时保留的旧版本数量。默认 10。
     - Pod 可用最短时间：Pod 就绪的最短时间，只有超出这个时间 Pod 才被认为可用，默认 0 秒。
     - 升级最大持续时间：如果超过所设置的时间仍未部署成功，则将该负载标记为失败。默认 600 秒。
-    - 缩容时间窗：负载停止前命令的执行时间窗（0-9,999秒），默认 30 秒。
+    - 缩容时间窗：负载停止前命令的执行时间窗（0-9,999 秒），默认 30 秒。
 
-=== "调度策略"
+#### "调度策略"
 
     ![调度策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy15.png)
 
@@ -158,11 +158,11 @@
     - 节点亲和性：根据节点上的标签来约束 Pod 可以调度到哪些节点上。
     - 工作负载亲和性：基于已经在节点上运行的 Pod 的标签来约束 Pod 可以调度到哪些节点。
     - 工作负载反亲和性：基于已经在节点上运行的 Pod 的标签来约束 Pod 不可以调度到哪些节点。
-    - 拓扑域：即 topologyKey，用于指定可以调度的一组节点。例如， __kubernetes.io/os__ 表示只要某个操作系统的节点满足 labelSelector 的条件就可以调度到该节点。
+    - 拓扑域：即 topologyKey，用于指定可以调度的一组节点。例如，__kubernetes.io/os__ 表示只要某个操作系统的节点满足 labelSelector 的条件就可以调度到该节点。
 
     > 具体详情请参考[调度策略](pod-config/scheduling-policy.md)。
 
-=== "标签与注解"
+#### "标签与注解"
 
     可以点击 __添加__ 按钮为工作负载和容器组添加标签和注解。
 
@@ -172,11 +172,11 @@
 
 除了通过镜像方式外，还可以通过 YAML 文件更快速地创建创建守护进程。
 
-1. 点击左侧导航栏上的 __集群列表__ ，然后点击目标集群的名称，进入 __集群详情__ 页面。
+1. 点击左侧导航栏上的 __集群列表__，然后点击目标集群的名称，进入 __集群详情__ 页面。
 
     ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
-2. 在集群详情页面，点击左侧导航栏的 __工作负载__ -> __守护进程__ ，然后点击页面右上角的 __YAML 创建__ 按钮。
+2. 在集群详情页面，点击左侧导航栏的 __工作负载__ -> __守护进程__，然后点击页面右上角的 __YAML 创建__ 按钮。
 
     ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/daemon07.png)
 

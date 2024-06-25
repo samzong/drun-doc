@@ -30,13 +30,13 @@
 
     ![添加环境变量](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret06.png)
 
-3. 在环境变量类型处选择 __密钥导入__ 或 __密钥键值导入__ 。
+3. 在环境变量类型处选择 __密钥导入__ 或 __密钥键值导入__。
 
     ![密钥导入](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret07.png)
 
-    - 当环境变量类型选择为 __密钥导入__ 时，依次输入 __变量名__ 、 __前缀__ 、 __密钥__ 的名称。
+    - 当环境变量类型选择为 __密钥导入__ 时，依次输入 __变量名__、__前缀__、__密钥__ 的名称。
 
-    - 当环境变量类型选择为 __密钥键值导入__ 时，依次输入 __变量名__ 、 __密钥__ 、 __键__ 的名称。
+    - 当环境变量类型选择为 __密钥键值导入__ 时，依次输入 __变量名__、__密钥__、__键__ 的名称。
 
 ### 命令行操作
 
@@ -74,17 +74,17 @@ spec:
 
 ### 图形界面操作
 
-在通过镜像创建工作负载时，您可以通过在 __数据存储__ 界面选择存储类型为 __密钥__ ，将密钥作为容器的数据卷。
+在通过镜像创建工作负载时，您可以通过在 __数据存储__ 界面选择存储类型为 __密钥__，将密钥作为容器的数据卷。
 
 1. 进入[镜像创建工作负载](../workloads/create-deployment.md)页面。
 
-    ![创建deployment](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret05.png)
+    ![创建 deployment](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret05.png)
 
 2. 在 __容器配置__ 选择 __数据存储__ 配置，在 __节点路径映射__ 列表点击 __添加__ 按钮。
 
-    ![创建deployment](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret08.png)
+    ![创建 deployment](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret08.png)
 
-3. 在存储类型处选择 __密钥__ ，并依次输入 __容器路径__ 、 __子路径__ 等信息。
+3. 在存储类型处选择 __密钥__，并依次输入 __容器路径__、__子路径__ 等信息。
 
 ### 命令行操作
 
@@ -120,11 +120,11 @@ spec:
 
 ### 图形化操作
 
-在通过镜像创建工作负载时，您可以通过在 __数据存储__ 界面选择存储类型为 __密钥__ ，将密钥作为容器的数据卷。
+在通过镜像创建工作负载时，您可以通过在 __数据存储__ 界面选择存储类型为 __密钥__，将密钥作为容器的数据卷。
 
 1. 进入[镜像创建工作负载](../workloads/create-deployment.md)页面。
 
-    ![创建deployment](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret05.png)
+    ![创建 deployment](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret05.png)
 
 2. 在第二步 __容器配置__ 时选择 __基本信息__ 配置，点击 __选择镜像__ 按钮。
 
@@ -134,7 +134,7 @@ spec:
 
     ![选择镜像](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret10.png)
 
-4. 输入私有仓库内的镜像名称，点击 __确定__ ，完成镜像选择。
+4. 输入私有仓库内的镜像名称，点击 __确定__，完成镜像选择。
 
 !!! note
 

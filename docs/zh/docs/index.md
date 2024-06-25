@@ -37,46 +37,8 @@ hide:
 
 [![多地域算力中心](./images/home02.png)](https://console.d.run/)
 
-<div class="grid cards" markdown>
-
--   :fontawesome-brands-battle-net:{ .lg .middle } __<font color="green">强大的</font>算力网络__
-
-    ---
-
-    支持千卡、万卡级别的高速互联，打造超大规模 GPU 集群的最优网络利用，保障算力供应的稳定、高速、可靠。
-
--   :material-arrange-send-to-back:{ .lg .middle } __<font color="green">灵活的</font>资源调度__
-
-    ---
-
-    提供灵活的计算、网络、存储资源调度方案，有效提高资源利用率，按需使用算力资源，显著降低算力成本。
-
--   :simple-themodelsresource:{ .lg .middle } __<font color="green">功能丰富的</font>模型套件__
-
-    ---
-
-    通过 AI 生态开放平台提供各类便捷实用、性能高效的模型套件，为模型开发与训练提供支持，加速 AI 应用落地及创新。
-
-</div>
-
 <div style="text-align: center;">
   <p style="font-size: 28px; font-weight: bold;"><font color="green">AI 开放生态平台</font>，加速 AI 创新应用</p>
-</div>
-
-<div class="grid cards" markdown>
-
--   :fontawesome-brands-dev:{ .lg .middle } __面向 AI <font color="green">开发者</font>__
-
-    ---
-
-    算法开发全流程一站式服务
-
--   :fontawesome-solid-users:{ .lg .middle } __面向 AI <font color="green">使用者</font>__
-
-    ---
-
-    轻量化、灵活交互，易上手，用户友好
-
 </div>
 
 ![AI 开放生态平台](./images/home03.png)

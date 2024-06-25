@@ -17,23 +17,23 @@
 
 参考以下步骤，使用镜像创建一个任务。
 
-1. 点击左侧导航栏上的 __集群列表__ ，然后点击目标集群的名称，进入 __集群详情__ 页面。
+1. 点击左侧导航栏上的 __集群列表__，然后点击目标集群的名称，进入 __集群详情__ 页面。
 
     ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
-2. 在集群详情页面，点击左侧导航栏的 __工作负载__ -> __任务__ ，然后点击页面右上角的 __镜像创建__ 按钮。
+2. 在集群详情页面，点击左侧导航栏的 __工作负载__ -> __任务__，然后点击页面右上角的 __镜像创建__ 按钮。
 
     ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/job01.png)
 
 3. 依次填写[基本信息](create-job.md#_3)、[容器配置](create-job.md#_4)、[服务配置](create-job.md#_5)、[高级配置](create-job.md#_6)后，在页面右下角点击 __确定__ 完成创建。
 
-    系统将自动返回 __任务__ 列表。点击列表右侧的 __︙__ ，可以对任务执行执行更新、删除、重启等操作。
+    系统将自动返回 __任务__ 列表。点击列表右侧的 __︙__，可以对任务执行执行更新、删除、重启等操作。
 
     ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/job08.png)
 
 ### 基本信息
 
-在 __创建任务__ 页面中，根据下表输入基本信息后，点击 __下一步__ 。
+在 __创建任务__ 页面中，根据下表输入基本信息后，点击 __下一步__。
 
 ![创建任务](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/job02.png)
 
@@ -48,7 +48,7 @@
 
 > 容器配置仅针对单个容器进行配置，如需在一个容器组中添加多个容器，可点击右侧的 __+__ 添加多个容器。
 
-=== "基本信息（必填）"
+#### "基本信息（必填）"
 
     ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/job02-1.png)
 
@@ -63,31 +63,31 @@
 
         > 设置 GPU 独享之前，需要管理员预先在集群节点上安装 GPU 卡及驱动插件，并在[集群设置](../clusterops/cluster-settings.md)中开启 GPU 特性。
 
-=== "生命周期（选填）"
+#### "生命周期（选填）"
 
     设置容器启动时、启动后、停止前需要执行的命令。详情可参考[容器生命周期配置](pod-config/lifecycle.md)。
 
     ![生命周期](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy06.png)
 
-=== "健康检查（选填）"
+#### "健康检查（选填）"
 
     用于判断容器和应用的健康状态，有助于提高应用的可用性。详情可参考[容器健康检查配置](pod-config/health-check.md)。
 
     ![健康检查](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy07.png)
 
-=== "环境变量（选填）"
+#### "环境变量（选填）"
 
     配置 Pod 内的容器参数，为 Pod 添加环境变量或传递配置等。详情可参考[容器环境变量配置](pod-config/env-variables.md)。
 
     ![环境变量](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy08.png)
 
-=== "数据存储（选填）"
+#### "数据存储（选填）"
 
     配置容器挂载数据卷和数据持久化的设置。详情可参考[容器数据存储配置](pod-config/env-variables.md)。
 
     ![数据存储](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy09.png)
 
-=== "安全设置（选填）"
+#### "安全设置（选填）"
 
     通过 Linux 内置的账号权限隔离机制来对容器进行安全隔离。您可以通过使用不同权限的账号 UID（数字身份标记）来限制容器的权限。例如，输入 __0__ 表示使用 root 账号的权限。
 
@@ -97,7 +97,7 @@
 
 高级配置包括任务设置、标签与注解两部分。
 
-=== "任务设置"
+#### "任务设置"
 
     ![任务设置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/job03.png)
 
@@ -105,7 +105,7 @@
     - 超时时间：超出该时间时，任务会被标识为执行失败，任务下的所有 Pod 都会被删除。为空时表示不设置超时时间。
     - 重启策略：设置失败时是否重启 Pod。
 
-=== "标签与注解"
+#### "标签与注解"
 
     可以点击 __添加__ 按钮为工作负载实例 Pod 添加标签和注解。
 
@@ -115,11 +115,11 @@
 
 除了通过镜像方式外，还可以通过 YAML 文件更快速地创建创建任务。
 
-1. 点击左侧导航栏上的 __集群列表__ ，然后点击目标集群的名称，进入 __集群详情__ 页面。
+1. 点击左侧导航栏上的 __集群列表__，然后点击目标集群的名称，进入 __集群详情__ 页面。
 
     ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
-2. 在集群详情页面，点击左侧导航栏的 __工作负载__ -> __任务__ ，然后点击页面右上角的 __YAML 创建__ 按钮。
+2. 在集群详情页面，点击左侧导航栏的 __工作负载__ -> __任务__，然后点击页面右上角的 __YAML 创建__ 按钮。
 
     ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/job09.png)
 

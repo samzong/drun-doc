@@ -90,6 +90,26 @@ plugins:
   - search:
       separator: '[\\s\\u200b\\-]'
   - swagger-ui-tag
+  - with-pdf:
+      author: 'DaoCloud'
+      copyright: 'DaoCloud Inc.'
+      # cover
+      cover_logo: images/d.run.png
+      cover_title: 'd.run 让算力更自由'
+      cover_subtitle: 'd.run (DaoCloud Runs Intelligence)，揭示一个新一代软件体系下的全新算力世界，让算力更自由。'
+      back_cover: false
+      # toc
+      toc_title: '目录'
+      heading_shift: true
+      toc_level: 4
+      two_columns_level: 0
+      #
+      output_path: pdf/docs.pdf
+      enabled_if_env: ENABLE_PDF_EXPORT
+#     render_js: true
+#     headless_chrome_path: /opt/homebrew/bin/chromium
+#      show_anchors: true
+      verbose: true
   # - mermaid2
 
   - minify:
